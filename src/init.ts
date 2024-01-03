@@ -1,5 +1,6 @@
 import express, { Application } from "express";
 import cors from "cors";
+import dotenv from "dotenv";
 
 // manejador de erroes de la api
 import errorHandler from "./middlewares/errorHandler";
@@ -8,6 +9,8 @@ import morgan from "morgan";
 
 /* Lista de importaciones de rutas para la api */
 import HolaMundoRoutes from "./routes/HolaMundoRoutes";
+
+dotenv.config();
 
 const API_VERSION = "/api/v1";
 
@@ -23,5 +26,7 @@ app.use(morgan("dev"));
 // lista de rutas
 app.use(`${API_VERSION}`, HolaMundoRoutes);
 // Static files
-app.use(`${API_VERSION}/public`, express.static("src/uploads"));
+const staticFilesPath = process.env.STATIC_FILES_PATH || "src/public";
+console.log(staticFilesPath);
+app.use(`${API_VERSION}/static`, express.static(staticFilesPath));
 export default app;
