@@ -30,7 +30,7 @@ Antes de iniciar, asegúrate de tener instalado Node.js en tu sistema. Luego, si
 2.  **Creación de variables de entorno**
     Crear un archivo `.env` en la raiz del proyecto con las siguientes variables:
 
-        ```bash
+        ```
         STATIC_FILES_PATH=src/public
         # Añade aquí otras variables de entorno necesarias.
         ```
@@ -42,7 +42,6 @@ Antes de iniciar, asegúrate de tener instalado Node.js en tu sistema. Luego, si
     ```
 
 4.  **Construcción para producción**
-    `bash
-npm run build
+    `npm run build &&
 npm run start
-    `
+   `
