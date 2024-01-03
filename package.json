@@ -1,0 +1,56 @@
+{
+  "name": "api_backend_plantilla",
+  "version": "1.0.0",
+  "description": "Plantilla para proyectos backend",
+  "main": "src/app.ts",
+  "scripts": {
+    "start": "node dist/app.js",
+    "dev": "nodemon src/app.ts --exec ts-node",
+    "build": "tsc -p tsconfig.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeoRami99/Plantilla-Backend-Typescript.git"
+  },
+  "keywords": [
+    "Express",
+    "typescript",
+    "nodejs",
+    "sequelize",
+    "orm."
+  ],
+  "author": "Leonardo Ramirez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LeoRami99/Plantilla-Backend-Typescript/issues"
+  },
+  "homepage": "https://github.com/LeoRami99/Plantilla-Backend-Typescript#readme",
+  "dependencies": {
+    "@types/body-parser": "^1.19.3",
+    "@types/cors": "^2.8.14",
+    "@types/express": "^4.17.19",
+    "@types/joi": "^17.2.3",
+    "@types/jsonwebtoken": "^9.0.5",
+    "@types/morgan": "^1.9.9",
+    "@types/multer": "^1.4.11",
+    "@types/nodemailer": "^6.4.14",
+    "@types/sequelize": "^4.28.16",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "image-size": "^1.0.2",
+    "joi": "^17.11.0",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.6.2",
+    "nodemailer": "^6.9.7",
+    "sequelize": "^6.33.0",
+    "ts-node": "^10.9.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

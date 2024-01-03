@@ -1,0 +1,38 @@
+{
+    "compilerOptions": {
+        "target": "es2020", // o "esnext" para utilizar las características más recientes de ECMAScript
+        "module": "commonjs",
+        "outDir": "./dist",
+        "rootDir": "./src", // Especifica la carpeta raíz de los archivos fuente
+        "moduleResolution": "node", // Estrategia de resolución de módulos
+        "strict": true, // Habilita todas las opciones estrictas de tipo
+        "esModuleInterop": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "resolveJsonModule": true,
+        "lib": ["es2020", "dom"],
+        "noImplicitAny": true, // No permite expresiones y declaraciones con un tipo 'any' implícito
+        "noImplicitReturns": true, // No permite funciones que no tienen un retorno en todas las ramas de código
+        "noImplicitThis": true, // Eleva un error cuando 'this' es de tipo 'any'
+        "strictNullChecks": true, // Activa la comprobación estricta para nulos
+        "strictFunctionTypes": true, // Activa la comprobación estricta en los tipos de las funciones
+        "strictBindCallApply": true, // Activa la comprobación estricta en bind, call y apply
+        "strictPropertyInitialization": true, // Asegura que las propiedades de las clases se inicialicen correctamente
+        "noUnusedLocals": true, // Informa de las variables locales no utilizadas
+        "noUnusedParameters": false, // Informa de los parámetros no utilizados
+        "noFallthroughCasesInSwitch": true, // Previene casos de 'switch' sin 'break'
+        "baseUrl": "./", // Permite establecer una URL base para la resolución de módulos
+        "paths": { // Permite mapear importaciones a rutas específicas
+            "*": ["node_modules/*"],
+            "@models/*": ["src/models/*"],
+            "@controllers/*": ["src/controllers/*"],
+            // Añade más según sea necesario
+        },
+        "inlineSourceMap": true, // Genera un source map dentro de los archivos .js
+        "inlineSources": true, // Incluye el código fuente dentro de los mapas de fuente
+    },
+    "include": ["src/**/*"],
+    "exclude": ["node_modules", "**/*.spec.ts"]
+}
