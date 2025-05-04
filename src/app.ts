@@ -1,12 +1,18 @@
 import { createServer } from "http";
 import { Server as IOServer } from "socket.io";
 import express, { Application } from "express";
+import cors from "cors";
 
 import { config } from "./config"; // aquí deberías tener PORT
 import { setupChat } from "./sockets/chat.socket";
 import { connectDatabase } from "./configDB";
+import RouterChat from "./routes/chat.route";
 
 const app: Application = express();
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(cors()); // Habilitar CORS para todas las rutas
+app.use("/api/chat", RouterChat); // Rutas del chat
 
 async function startServer() {
 	// 1. Crear el servidor HTTP que envuelve Express
