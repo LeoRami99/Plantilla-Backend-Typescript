@@ -61,4 +61,13 @@ export default class ChatService {
 			throw new Error("Failed to fetch user's chats from the database");
 		}
 	}
+
+	async deleteChat(chatId: string): Promise<void> {
+		try {
+			await ChatModel.deleteOne({ id: chatId }).exec();
+		} catch (error) {
+			console.error("Error deleting chat:", error);
+			throw new Error("Database error while deleting chat");
+		}
+	}
 }
