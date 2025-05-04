@@ -59,8 +59,11 @@ export class ChatController {
 				}
 
 				// 🚀 Detectar comando especial /get-pay 200 COP
-				if (text.startsWith("/gen-pay")) {
-					const [, amount, currency] = text.split(" ");
+				if (text.startsWith("/genpay")) {
+					const parts = text.split(" ");
+					const amount = parts[1];
+					// Toma todo el resto como currency sin splitear más
+					const currency = parts.slice(2).join(" ");
 
 					if (!amount || !currency) {
 						console.warn("Formato inválido en /get-pay, faltan parámetros.");
